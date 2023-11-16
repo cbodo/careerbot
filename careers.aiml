@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+        <pattern>DEV</pattern>
+        <template>
+            Oops! Our database has two careers that match 'dev.' Which would you like to explore?
+            <delay>1</delay>
+            <srai>XSOFTORWEB</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DEVELOPER</pattern>
+        <template>
+            Oops! Our database has two careers that match 'developer.' Which would you like to explore?
+            <delay>1</delay>
+            <srai>XSOFTORWEB</srai>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>XSOFTORWEB</pattern>
+        <template>
+            <button>
+                <text>Software Developer</text>
+                <postback>SOFTDEV</postback>
+            </button>
+            <button>
+                <text>Web Developer</text>
+                <postback>WEBDEV</postback>
+            </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WEB ^</pattern>
+        <template><srai>WEBDEV</srai></template>
+    </category>
+    
+	<category>
+	    <pattern>WEBDEV</pattern>
+	    <template>
+	        Web developers create and maintain websites. They are also responsible for the site’s technical aspects, such as its performance and capacity, which are measures of a website’s speed and how much traffic the site can handle. In addition, web developers may create content for the site.
+	        <delay>1</delay>
+	        Learn more: <a href="https://www.bls.gov/ooh/computer-and-information-technology/web-developers.htm">U.S. Bureau of Labor Statistics: Web Developers</a>
+	        <delay>1</delay>
+	        <srai>GOBACK</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>SOFTWARE ^</pattern>
+	    <template><srai>SOFTWAREDEV</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>SOFTWAREDEV</pattern>
+	    <template>
+	        Software developers create the computer applications that allow users to do specific tasks and the underlying systems that run the devices or control networks.
+	        <delay>1</delay>
+	        Learn more here: <a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm">U.S. Bureau of Labor Statistics: Software Developer</a>
+	        <delay>1</delay>
+	        <srai>GOBACK</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>ADMIN</pattern>
+	    <template>
+	        Oops! Our database has two careers that match 'admin.' Which would you like to explore?
+	        <srai>XDATAORNET</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>ADMINISTRATOR</pattern>
+	    <template>
+	        Oops! Our database has two careers that match 'administrator.' Which would you like to explore?
+	        <srai>XDATAORNET</srai>
+	    </template>
+	</category>
+	
+	<category>
+        <pattern>XDATAORNET</pattern>
+        <template>
+            <button>
+                <text>Database Administrator</text>
+                <postback>DATAADMIN</postback>
+            </button>
+            <button>
+                <text>Network and Computer Systems Administrator</text>
+                <postback>NETWORKADMIN</postback>
+            </button>
+        </template>
+    </category>
+	
+	<category>
+	    <pattern>DATA ^</pattern>
+	    <template><srai>DATAADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>DATABASE ^</pattern>
+	    <template><srai>DATAADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>DATAADMIN</pattern>
+	    <template>
+	        Database administrators and architects create or organize systems to store and secure a variety of data, such as financial information and customer shipping records. They also make sure that the data are available to authorized users.
+	        <delay>1</delay>
+	        Learn more here: <a href="https://www.bls.gov/ooh/computer-and-information-technology/database-administrators.htm">U.S. Bureau of Labor Statistics: Database Administrator</a>
+	        <delay>1</delay>
+	        <srai>GOBACK</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>INFO ^</pattern>
+	    <template><srai>INFOSEC</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ SEC</pattern>
+	    <template><srai>INFOSEC</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>INFORMATION ^</pattern>
+	    <template><srai>INFOSEC</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ SECURITY</pattern>
+	    <template><srai>INFOSEC</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>INFOSEC</pattern>
+	    <template>
+	        Information security analysts plan and carry out security measures to protect an organization’s computer networks and systems.
+	        <delay>1</delay>
+	        Learn more here: <a href="https://www.bls.gov/ooh/computer-and-information-technology/information-security-analysts.htm">U.S. Bureau of Labor Statistics: Information Security Analysts</a>.
+	        <delay>1</delay>
+	        <srai>GOBACK</srai>
+	    </template>
+	</category>
+	
+	<category>
+	    <pattern>NETWORK ^</pattern>
+	    <template><srai>NETWORKADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ SYS ^</pattern>
+	    <template><srai>NETWORKADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ SYSTEM ^</pattern>
+	    <template><srai>NETWORKADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ SYSTEMS ^</pattern>
+	    <template><srai>NETWORKADMIN</srai></template>
+	</category>
+	
+	<category>
+	    <pattern>^ COMPUTER ^</pattern>
+	    <template><srai></srai></template>
+	</category>
+	
+	<category>
+	    <pattern>NETWORKADMIN</pattern>
+	    <template>
+	        Computer networks are critical parts of almost every organization. Network and computer systems administrators are responsible for the day-to-day operation of these networks. They organize, install, and support an organization’s computer systems, including local area networks (LANs), wide area networks (WANs), network segments, intranets, and other data communication systems.
+	        <delay>1</delay>
+	        Learn more here: <a href="https://www.bls.gov/ooh/computer-and-information-technology/network-and-computer-systems-administrators.htm">U.S. Bureau of Labor Statistics: Network and Computer Systems Administrator</a>
+	        <delay>1</delay>
+	        <srai>GOBACK</srai>
+	    </template>
+	</category>
+	
+</aiml>

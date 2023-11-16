@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <category>
+      <pattern>^ START ^</pattern>
+      <template>
+          Hello! My name is Careerbot. 
+          <delay>1</delay>
+          I'm here to help you find the career of your dreams!
+          <delay>2</delay>
+          <srai>MENU</srai>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>^ MENU ^</pattern>
+      <template>
+          Please choose from the following options:
+          <delay>2</delay>
+          <button>
+              <text>Take the quiz.</text>
+              <postback>QUIZ</postback>
+          </button>
+          <button>
+              <text>See our career options.</text>
+              <postback>CAREERS</postback>
+          </button>
+          <button>
+              <text>Start over.</text>
+              <postback>START</postback>
+          </button>
+      </template>
+    </category>
+    
+    <category>
+      <pattern>^ CAREERS ^</pattern>
+      <template><srai>CAREER</srai></template>
+    </category>
+    
+    <category>
+      <pattern>^ CAREER ^</pattern>
+      <template>
+          Pick a career to see more info:
+          <button>
+              <text>Database Administrator</text>
+              <postback>DATAADMIN</postback>
+          </button>
+          <button>
+              <text>Information Security Analyst</text>
+              <postback>INFOSEC</postback>
+          </button>
+          <button>
+              <text>Network and Computer Systems Administrator</text>
+              <postback>NETWORKADMIN</postback>
+          </button>
+          <button>
+              <text>Software Developer</text>
+              <postback>SOFTWAREDEV</postback>
+          </button>
+          <button>
+              <text>Web Developer</text>
+              <postback>WEBDEV</postback>
+          </button>
+      </template>
+    </category>
+  
+    <category>
+        <pattern>^ QUESTIONS ^</pattern>
+        <template><srai>QUIZ</srai></template>
+    </category>
+  
+    <category>
+        <pattern>^ TEST ^</pattern>
+        <template><srai>QUIZ</srai></template>
+    </category>
+  
+    <category>
+        <pattern>^ QUIZ ^</pattern>
+        <template>
+            <delay>1</delay>
+            Here's how it works...
+            <delay>1</delay>
+            First, I'll ask a series of yes or no questions. 
+            <delay>1</delay>
+            Then, I'll use your answers to narrow down the matches until I find the perfect career for you. 
+            <delay>2</delay>
+            Ready to start?
+            <reply>
+                <text>Ready!</text>
+                <postback>FIRSTQUESTION</postback>
+            </reply>
+            <reply>
+                <text>Go Back</text>
+                <postback>MENU</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>FIRSTQUESTION</pattern>
+        <template>
+            Are you interested in writing code?
+            <reply>
+                <text>Yes</text>
+                <postback>YESCODING</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOCODING</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>YESCODING</pattern>
+        <template>
+            Are you interested in designing websites?
+            <reply>
+                <text>Yes</text>
+                <postback>YESWEB</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOWEB</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>NOCODING</pattern>
+        <template>
+            Are you interested with working with data?
+            <reply>
+                <text>Yes</text>
+                <postback>YESDATA</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NODATA</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>NOWEB</pattern>
+        <template>
+            Are you interested in creating programs?
+            <reply>
+                <text>Yes</text>
+                <postback>YESPROGRAM</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOPROGRAM</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+      <pattern>YESWEB</pattern>
+      <template>
+          <srai>XMATCH</srai>
+          WEB DEVELOPER might be the career for you! 
+          <delay>1</delay>
+          Would you like to learn more about the WEB DEVELOPER career?
+          <reply>
+              <text>Yes</text>
+              <postback>WEBDEV</postback>
+          </reply>
+          <reply>
+              <text>No</text>
+              <postback>NOMORE</postback>
+          </reply>
+      </template>
+    </category>
+  
+    <category>
+      <pattern>YESPROGRAM</pattern>
+      <template>
+          <srai>XMATCH</srai>
+          You might be interested in becoming a SOFTWARE DEVELOPER! 
+          <delay>1</delay>
+          Would you like to learn more about the SOFTWARE DEVELOPER career?
+          <reply>
+              <text>Yes</text>
+              <postback>SOFTWAREDEV</postback>
+          </reply>
+          <reply>
+              <text>No</text>
+              <postback>NOMORE</postback>
+          </reply>
+      </template>
+    </category>
+  
+    <category>
+        <pattern>NOPROGRAM</pattern>
+        <template>
+            <srai>XMATCH</srai>
+            You might enjoy working as a DATABASE ADMINISTRATOR! 
+            <delay>1</delay>
+            Would you like to learn more about the DATABASE ADMINISTRATOR career?
+            <reply>
+                <text>Yes</text>
+                <postback>DATAADMIN</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOMORE</postback>
+            </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>YESDATA</pattern>
+        <template>
+            <srai>XMATCH</srai>
+            You should be an INFORMATION SECURITY ANALYST! 
+            <delay>1</delay>
+            Would you like to learn more about the INFORMATION SECURITY ANALYST career?
+            <reply>
+                <text>Yes</text>
+                <postback>INFOSEC</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOMORE</postback>
+            </reply>
+        </template>
+    </category>
+  
+     <category>
+          <pattern>NODATA</pattern>
+          <template>
+            <srai>XMATCH</srai>
+            You'd be great as a NETWORK AND COMPUTER SYSTEMS ADMINISTRATOR! 
+            <delay>1</delay>
+            Would you like to learn more about the NETWORK AND COMPUTER SYSTEMS ADMINISTRATOR career?
+           <reply>
+               <text>Yes</text>
+               <postback>NETWORKADMIN</postback>
+            </reply>
+            <reply>
+                 <text>No</text>
+                 <postback>NOMORE</postback>
+             </reply>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>XMATCH</pattern>
+        <template>
+            <random>
+                <li>We found a match!</li>
+                <li>We found your new career!</li>
+                <li>The result is in!</li>
+                <li>I think we have a match!</li>
+                <li>Here are your results!</li>
+            </random>
+            <delay>2</delay>
+        </template>
+    </category>
+  
+    <category>
+        <pattern>NOMORE</pattern>
+        <template>
+            No problem! You can type the name of the career at any time to see the details or type 'menu' to go back.
+        </template>
+    </category>
+  
+    <category>
+        <pattern>GOBACK</pattern>
+        <template>
+            Would you like to go back to the menu?
+            <reply>
+                <text>Yes</text>
+                <postback>MENU</postback>
+            </reply>
+            <reply>
+                <text>No</text>
+                <postback>NOMENU</postback>
+            </reply>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>NOMENU</pattern>
+        <template>
+            Ok! I'll be here if you need me. 
+            <delay>3</delay>
+            Tip: You can type 'menu' to see the menu, type 'quiz' to take the quiz again, or type 'careers' to see all of the careers.
+        </template>
+    </category>
+</aiml>
